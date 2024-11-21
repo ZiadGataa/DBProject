@@ -1,0 +1,126 @@
+/* Reset and global styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+/* Container styling */
+.container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.form-header h1 {
+    color: #007BFF;
+    font-size: 24px;
+    margin-bottom: 0.5rem;
+}
+
+.form-header p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Form styling */
+#review-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+select {
+    appearance: none;
+    background-color: #fff;
+}
+
+/* Submit button styling */
+.submit-button {
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+/* Help text for tags */
+.help-text {
+    font-size: 12px;
+    color: #666;
+    margin-top: 4px;
+}
+
+/* Status message styling */
+#status-message {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Media Query for responsive design */
+@media (max-width: 600px) {
+    .container {
+        padding: 1.5rem;
+    }
+
+    .form-header h1 {
+        font-size: 20px;
+    }
+
+    .form-header p,
+    label {
+        font-size: 14px;
+    }
+}

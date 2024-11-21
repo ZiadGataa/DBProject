@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit or Delete a Review</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Edit or Delete a Review</h1>
+
+        <!-- Search Review by ID -->
+        <form id="search-form">
+            <label for="review-id">Enter Review ID:</label>
+            <input type="number" id="review-id" name="review-id" required>
+            <button type="button" onclick="searchReview()">Search Review</button>
+        </form>
+
+        <!-- Display Review for Editing or Deleting -->
+        <div id="review-details" style="display: none;">
+            <h2>Review Details</h2>
+            <form id="edit-form">
+                <label for="edit-review">Review:</label>
+                <textarea id="edit-review" name="edit-review" rows="4"></textarea>
+
+                <label for="edit-rating">Rating (1-10):</label>
+                <input type="number" id="edit-rating" name="edit-rating" min="1" max="10">
+
+                <button type="button" onclick="updateReview()">Update Review</button>
+                <button type="button" onclick="deleteReview()">Delete Review</button>
+            </form>
+        </div>
+
+        <p id="status-message"></p>
+    </div>
+    <script src="edit_review.js"></script>
+</body>
+</html>
