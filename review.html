@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muvo - John Wick 4 Review</title>
+  <link rel="stylesheet" href="style_dash.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <style>
+    iframe {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -90%);
+      border: none;
+      width: 560px;
+      height: 315px;
+    }
+
+    .reviews-section {
+      padding: 20px;
+      background-color: #1f1f1f;
+    }
+
+    .reviews-section h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #f5c518;
+      text-align: center;
+    }
+
+    .reviews-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .review {
+      background-color: #2c2c2c;
+      border-radius: 10px;
+      padding: 15px 20px;
+      width: 300px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    }
+
+    .review-author {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #f5c518;
+    }
+
+    .review-date {
+      font-size: 14px;
+      margin-bottom: 10px;
+      color: #999;
+    }
+
+    .review-content {
+      font-size: 14px;
+      line-height: 1.5;
+      color: #eaeaea;
+    }
+
+    .add-review-button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #f5c518;
+      color: #121212;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100px;
+      transition: background-color 0.3s;
+      text-decoration: none; /* Remove underline for links */
+    }
+
+    .add-review-button:hover {
+      background-color: #d4a816;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content">
+    <div class="menu">
+      <!-- Carousel structure -->
+      <div class="carousel">
+        <div class="carousel-slide active"
+          style="background-image: url('https://www.themoviedb.org/t/p/original/i3OTGmLNOZIo4SRQLVfLjeWegB6.jpg');">
+          <iframe 
+    width="560"
+    height="300"
+    src="https://www.youtube.com/embed/qEVUtrk8_B4?si=zvOCxAv4VnHNcyNS" 
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+          <div class="movie-info">
+            <div class="movie-title">John Wick 4</div>
+            <div class="movie-stats">★8.3 2h 49m <div class="movie-box"><span>MOVIE</span></div> 👁 93k </div>
+            <div class="movie-description">Grieving and hunted by the High Table, skilled assassin John Wick embarks on
+              a near-impossible
+              mission to decide his fate after the chaos in John Wick: Chapter 3 - Parabellum. John's vengeance-driven
+              journey leads to a
+              crucial confrontation with his former employers, who forced him into exile. As the vendetta to destroy the
+              puppet masters
+              unfolds, old allies face dire consequences, and powerful adversaries aim to take Wick down. In this battle
+              for freedom,
+              can Baba Yaga, the harbinger of death, ensure every bullet counts?</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Header menu -->
+      <div class="header-menu">
+        <div class="logo">
+          <img id="logo-img" src="official logo.png" alt="Muvo Logo" style="width: 140px;height: 40px;">
+        </div>
+        <div class="search-bar">
+          <input type="text" placeholder="Search...">
+        </div>
+      </div>
+
+      <!-- Hamburger menu -->
+      <div class="hamburger-menu" onclick="toggleDropdown()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <ul class="dropdown" id="dropdownMenu">
+        <li><a href="#">Watch Now</a></li>
+        <li><a href="#">Movies</a></li>
+        <li><a href="#">TV Shows</a></li>
+        <li><a href="#">Sports</a></li>
+        <li><a href="#">Kids</a></li>
+        <li><a href="#">Library</a></li>
+      </ul>
+
+      <!-- Carousel control buttons -->
+      <div class="carousel-control prev" id="prevButton">&#10094;</div>
+      <div class="carousel-control next" id="nextButton">&#10095;</div>
+    </div>
+
+
+    <!-- Recent Reviews Section -->
+    <div class="reviews-section">
+      <h2>Recent Reviews</h2>
+      <div class="reviews-list">
+        <!-- Review 1 -->
+        <div class="review">
+          <div class="review-author">ActionFan88</div>
+          <div class="review-date">April 2, 2024</div>
+          <div class="review-content">
+            <p>An adrenaline-fueled masterpiece! Keanu Reeves outdoes himself once again.</p>
+          </div>
+        </div>
+        <!-- Review 2 -->
+        <div class="review">
+          <div class="review-author">CinemaLover</div>
+          <div class="review-date">April 1, 2024</div>
+          <div class="review-content">
+            <p>Stunning visuals and relentless action sequences. A must-watch for fans of the series.</p>
+          </div>
+        </div>
+        <!-- Review 3 -->
+        <div class="review">
+            <div class="review-author">Mark Haryy</div>
+            <div class="review-date">June 21, 2024</div>
+            <div class="review-content">
+              <p>Totally cool! Insane story! GUNS GUNS!!!!!!</p>
+            </div>
+          </div>
+          <!-- Review 4 -->
+        <div class="review">
+            <div class="review-author">JustAGuy458</div>
+            <div class="review-date">May 18 1, 2023</div>
+            <div class="review-content">
+              <p>WOWOWOWOWOWOWOWOWOW!!!! AMAZING! </p>
+            </div>
+          </div>
+      </div>
+      <a class="add-review-button"  href="edit_review.html">Add Review?</a>
+    </div>
+
+    
+    <!-- Footer -->
+    <footer>
+      <p>2023 Copyright &copy; Muvo All rights reserved. Version 1.0.3</p>
+    </footer>
+  </div>
+
+  <!-- Include JavaScript files if needed -->
+  <script src="carousel.js"></script>
+</body>
+
+</html>
