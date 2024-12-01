@@ -63,3 +63,61 @@ function deleteReview() {
         })
         .catch(error => console.error('Error deleting review:', error));
 }
+
+// Function to handle user login
+function loginUser() {
+    const email = document.getElementById('login-email').value;
+    const password = document.getElementById('login-password').value;
+
+    fetch('http://localhost:3000/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email, password: password })
+    })
+    .then(response => response.json())
+    .then(data => {
+        const messageElement = document.getElementById('login-status-message');
+        if (data.success) {
+            messageElement.textContent = "Login successful!";
+            messageElement.style.color = 'green';
+            // Redirect user to another page or show user dashboard
+            window.location.href = '/dashboard.html'; // Example redirection
+        } else {
+            messageElement.textContent = data.message || "Login failed.";
+            messageElement.style.color = 'red';
+        }
+    })
+    .catch(error => console.error('Error logging in:', error));
+}
+
+
+// Function to handle user registration
+function registerUser() {
+    const name = document.getElementById('register-name').value;
+    const age = document.getElementById('register-age').value;
+    const email = document.getElementById('register-email').value;
+    const password = document.getElementById('register-password').value;
+    const isAdmin = document.getElementById('register-isAdmin').checked;
+    const isReviewer = document.getElementById('register-isReviewer').checked;
+
+    fetch('http://localhost:3000/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, age, email, password, isAdmin, isReviewer })
+    })
+    .then(response => response.json())
+    .then(data => {
+        const messageElement = document.getElementById('register-status-message');
+        if (data.success) {
+            messageElement.textContent = "Registration successful!";
+            messageElement.style.color = 'green';
+            // Optionally redirect to login page
+            window.location.href = '/login.html'; // Example redirection
+        } else {
+            messageElement.textContent = data.error || "Registration failed.";
+            messageElement.style.color = 'red';
+        }
+    })
+    .catch(error => console.error('Error registering user:', error));
+}
+

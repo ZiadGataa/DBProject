@@ -1,21 +1,50 @@
-const loginForm = document.getElementById("login-form");
-const loginButton = document.getElementById("login-form-submit");
-const loginErrorMsg = document.getElementById("login-error-msg");
-
-// When the login button is clicked, the following code is executed
-loginButton.addEventListener("click", (e) => {
-    // Prevent the default submission of the form
-    e.preventDefault();
-    // Get the values input by the user in the form fields
-    const username = loginForm.username.value;
-    const password = loginForm.password.value;
-
-    if (username === "user" && password === "web_dev") {
-        // If the credentials are valid, show an alert box and reload the page
-        alert("You have successfully logged in.");
-        location.reload();
-    } else {
-        // Otherwise, make the login error message show (change its oppacity)
-        loginErrorMsg.style.opacity = 1;
-    }
-})
+// Handle login
+document.getElementById('login-form').addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent default form submission
+  
+    const email = document.getElementById('email-field').value;
+    const password = document.getElementById('password-field').value;
+  
+    fetch('http://localhost:3000/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password })
+    })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          window.location.href = 'dashboard.html'; // Redirect on success
+        } else {
+          document.getElementById('login-error-msg').style.display = 'block';
+          document.getElementById('error-msg-second-line').textContent = data.message || "Invalid email and/or password.";
+        }
+      })
+      .catch(error => console.error('Error:', error));
+  });
+  
+  // Handle registration
+  function handleRegistration() {
+    const name = document.getElementById('register-name').value;
+    const age = document.getElementById('register-age').value;
+    const email = document.getElementById('register-email').value;
+    const password = document.getElementById('register-password').value;
+    const isAdmin = document.getElementById('is-admin').checked;
+    const isReviewer = document.getElementById('is-reviewer').checked;
+  
+    fetch('http://localhost:3000/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, age, email, password, isAdmin, isReviewer })
+    })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          alert('Registration successful! You can now log in.');
+          window.location.href = 'login.html';
+        } else {
+          alert(data.error || 'Registration failed.');
+        }
+      })
+      .catch(error => console.error('Error:', error));
+  }
+  
