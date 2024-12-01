@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="admin.css">
+  <script defer src="admin.js"></script>
+</head>
+
+<body>
+  <main id="admin-main">
+    <h1>Admin Dashboard</h1>
+    <p id="admin-welcome">Welcome, Admin!</p>
+
+    <!-- Manage Users Section -->
+    <section id="manage-users">
+      <h2>Manage Users</h2>
+      <button onclick="loadUsers()">View All Users</button>
+      <div id="user-list"></div>
+    </section>
+
+    <!-- Manage Movies Section -->
+    <section id="manage-movies">
+      <h2>Manage Movies</h2>
+      <!-- Add Movie Form -->
+      <form id="add-movie-form">
+        <input type="text" id="movie-name" placeholder="Movie Name" required>
+        <button type="button" onclick="addMovie()">Add Movie</button>
+      </form>
+
+      <!-- Remove Movie Form -->
+      <form id="remove-movie-form">
+        <input type="text" id="movie-name-remove" placeholder="Movie Name to Remove" required>
+        <button type="button" onclick="removeMovie()">Remove Movie</button>
+      </form>
+    </section>
+
+    <!-- Manage Reviews Section -->
+    <section id="manage-reviews">
+      <h2>Manage Reviews</h2>
+      <button onclick="loadReviews()">View All Reviews</button>
+      <div id="review-list"></div>
+    </section>
+  </main>
+</body>
+
+</html>
