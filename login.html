@@ -1,32 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
-  <link rel="stylesheet" href="login.css">
+
+  <!-- Include Google Fonts and Font Awesome for icons -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
+    rel="stylesheet"
+  >
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  >
+
+  <!-- Inline CSS styling -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #ffffff;
+      background-image: url('movie_wallpaper.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    form {
+      width: 400px;
+      min-height: 520px;
+      background-color: rgba(255, 255, 255, 0.13);
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+      padding: 50px 35px;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    }
+    form h3 {
+      text-align: center;
+      font-size: 32px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-top: 20px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    input {
+      width: 100%;
+      height: 50px;
+      margin-top: 8px;
+      background-color: rgba(255, 255, 255, 0.07);
+      border-radius: 3px;
+      border: none;
+      padding: 0 10px;
+      font-size: 14px;
+      font-weight: 300;
+      color: #ffffff;
+    }
+    input::placeholder {
+      color: #e5e5e5;
+    }
+    button {
+      width: 100%;
+      margin-top: 30px;
+      padding: 15px 0;
+      background-color: #ffffff;
+      color: #080710;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    #login-error-msg-holder {
+      margin-top: 20px;
+      text-align: center;
+    }
+    #login-error-msg {
+      color: #ff6b6b;
+      font-size: 14px;
+      display: none;
+    }
+    .social {
+      display: flex;
+      margin-top: 30px;
+      justify-content: space-between;
+    }
+    .social div {
+      width: 48%;
+      padding: 10px;
+      background-color: rgba(255, 255, 255, 0.27);
+      border-radius: 3px;
+      text-align: center;
+      cursor: pointer;
+    }
+    .social div:hover {
+      background-color: rgba(255, 255, 255, 0.47);
+    }
+    .social i {
+      margin-right: 8px;
+    }
+    #register-link {
+      margin-top: 20px;
+      text-align: center;
+    }
+    #register-link a {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+  </style>
+
+  <!-- Include your JavaScript file -->
   <script defer src="login.js"></script>
 </head>
-
 <body>
-  <main id="main-holder">
-    <h1 id="login-header">Login</h1>
+  <form id="login-form">
+    <h3 id="login-header">Login Here</h3>
 
     <div id="login-error-msg-holder">
-      <p id="login-error-msg">Invalid email <span id="error-msg-second-line">and/or password</span></p>
+      <p id="login-error-msg">
+        Invalid email <span id="error-msg-second-line">and/or password</span>
+      </p>
     </div>
 
-    <form id="login-form">
-      <input type="email" name="email" id="email-field" class="login-form-field" placeholder="Email" required>
-      <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password" required>
-      <input type="submit" value="Login" id="login-form-submit">
-    </form>
+    <label for="email-field">Email</label>
+    <input
+      type="email"
+      id="email-field"
+      name="email"
+      placeholder="Email"
+      required
+    >
+
+    <label for="password-field">Password</label>
+    <input
+      type="password"
+      id="password-field"
+      name="password"
+      placeholder="Password"
+      required
+    >
+
+    <button type="submit" id="login-form-submit">Log In</button>
+
+    <div class="social">
+      <div class="go" style="color:green;"><i class="fab fa-google" style="color:green;"></i> Google</div>
+      <div class="fb" style="color:blue;"><i class="fab fa-facebook" style="color:blue;"></i> Facebook</div>
+    </div>
 
     <div id="register-link">
       Don't have an account? <a href="register.html">Register here</a>
     </div>
-  </main>
+  </form>
 </body>
-
 </html>

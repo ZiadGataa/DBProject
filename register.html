@@ -1,31 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Register</title>
-  <link rel="stylesheet" href="register.css">
+
+  <!-- Include Google Fonts and Font Awesome for icons (if needed) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
+    rel="stylesheet"
+  >
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  >
+
+  <!-- Inline CSS styling -->
+  <style>
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #ffffff;
+      background-image: url('movie_wallpaper.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    form {
+      width: 400px;
+      min-height: 600px;
+      background-color: rgba(255, 255, 255, 0.13);
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+      padding: 50px 35px;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    }
+    form h3 {
+      text-align: center;
+      font-size: 32px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-top: 20px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      height: 50px;
+      margin-top: 8px;
+      background-color: rgba(255, 255, 255, 0.07);
+      border-radius: 3px;
+      border: none;
+      padding: 0 10px;
+      font-size: 14px;
+      font-weight: 300;
+      color: #ffffff;
+    }
+    input::placeholder {
+      color: #e5e5e5;
+    }
+    .checkbox-group {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .checkbox-group label {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 300;
+    }
+    .checkbox-group input {
+      width: auto;
+      height: auto;
+      margin-right: 8px;
+    }
+    button {
+      width: 100%;
+      margin-top: 30px;
+      padding: 15px 0;
+      background-color: #ffffff;
+      color: #080710;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    #login-link {
+      margin-top: 20px;
+      text-align: center;
+    }
+    #login-link a {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+  </style>
+
+  <!-- Include your JavaScript file -->
   <script defer src="login.js"></script>
 </head>
-
 <body>
-  <main id="main-holder">
-    <h1 id="register-header">Register</h1>
-    <form id="register-form">
-      <input type="text" id="register-name" placeholder="Name" required>
-      <input type="number" id="register-age" placeholder="Age" required>
-      <input type="email" id="register-email" placeholder="Email" required>
-      <input type="password" id="register-password" placeholder="Password" required>
-      <label><input type="checkbox" id="is-admin"> Admin</label>
-      <label><input type="checkbox" id="is-reviewer"> Reviewer</label>
-      <button type="button" onclick="handleRegistration()">Register</button>
-    </form>
+  <form id="register-form">
+    <h3 id="register-header">Register Here</h3>
+
+    <label for="register-name">Name</label>
+    <input
+      type="text"
+      id="register-name"
+      name="name"
+      placeholder="Name"
+      required
+    >
+
+    <label for="register-age">Age</label>
+    <input
+      type="number"
+      id="register-age"
+      name="age"
+      placeholder="Age"
+      required
+    >
+
+    <label for="register-email">Email</label>
+    <input
+      type="email"
+      id="register-email"
+      name="email"
+      placeholder="Email"
+      required
+    >
+
+    <label for="register-password">Password</label>
+    <input
+      type="password"
+      id="register-password"
+      name="password"
+      placeholder="Password"
+      required
+    >
+
+    <div class="checkbox-group">
+      <label>
+        <input type="checkbox" id="is-admin">
+        Admin
+      </label>
+      <label>
+        <input type="checkbox" id="is-reviewer">
+        Reviewer
+      </label>
+    </div>
+
+    <button type="button" onclick="handleRegistration()">Register</button>
 
     <div id="login-link">
       Already have an account? <a href="login.html">Login here</a>
     </div>
-  </main>
+  </form>
 </body>
-
 </html>

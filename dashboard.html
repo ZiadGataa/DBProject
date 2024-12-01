@@ -4,15 +4,222 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style_dash.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <title>Muvo</title>
 </head>
 
+
 <body>
-  <main>
-    <h1>Welcome to the Dashboard</h1>
-    <p>You have successfully logged in!</p>
-  </main>
+  <div class="content">
+    <div class="menu">
+      <!-- Add the carousel structure here -->
+      <div class="carousel">
+        <div class="carousel-slide active"
+          style="background-image: url('wallpapersden.com_fall-2022-movie-4k_3840x2160.jpg');">
+          <div class="movie-info">
+            <div class="movie-title">FALL</div>
+            <div class="movie-stats">★6.4 1h 47m <div class="movie-box"><span>MOVIE</span></div> 👁 8k </div>
+            <div class="movie-description">Fifty-one weeks after a traumatic incident, emotionally scarred rock climber
+              Becky
+              decides to face her fears alongside her thrill-seeking friend, Hunter. They embark on a high-risk
+              adventure to climb
+              the abandoned 2,000-foot B67 TV tower in the Mojave desert. The dangerous, vertigo-inducing structure
+              tests their limits,
+              and when things go awry, the women must summon all their courage and strength to create a plan for a safe
+              return or risk
+              losing their lives.</div>
+          </div>
+        </div>
+        <div class="carousel-slide unactive"
+          style="background-image: url('https://www.themoviedb.org/t/p/original/i3OTGmLNOZIo4SRQLVfLjeWegB6.jpg');">
+          <div class="movie-info">
+            <div class="movie-title">John Wick 4</div>
+            <div class="movie-stats">★8.3 2h 49m <div class="movie-box"><span>MOVIE</span></div> 👁 93k </div>
+            <div class="movie-description">Grieving and hunted by the High Table, skilled assassin John Wick embarks on
+              a near-impossible
+              mission to decide his fate after the chaos in John Wick: Chapter 3 - Parabellum. John's vengeance-driven
+              journey leads to a
+              crucial confrontation with his former employers, who forced him into exile. As the vendetta to destroy the
+              puppet masters
+              unfolds, old allies face dire consequences, and powerful adversaries aim to take Wick down. In this battle
+              for freedom,
+              can Baba Yaga, the harbinger of death, ensure every bullet counts?</div>
+          </div>
+        </div>
+        <div class="carousel-slide unactive"
+          style="background-image: url('https://image.tmdb.org/t/p/original/aknvFyJUQQoZFtmFnYzKi4vGv4J.jpg');">
+          <div class="movie-info">
+            <div class="movie-title">DUNE</div>
+            <div class="movie-stats">★7.7 2h 14m <div class="movie-box"><span>MOVIE</span></div> 👁 43k </div>
+            <div class="movie-description">A mythic and emotionally charged hero's journey, "Dune" tells the story of
+              Paul
+              Atreides, a brilliant and gifted young man born into a great destiny beyond his understanding, who must
+              travel
+              to the most dangerous planet in the universe to ensure the future of his family and his people. As
+              malevolent
+              forces explode in. Everything seems to fall apart. Will he be able to rise to the test?</div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      <div class="header-menu">
+        <div class="logo"><img id="logo-img" src="official logo.png" alt="" style="width: 140px;height: 40px;"></div>
+        <ul class="menu-bar">
+          <li>Movies</li>
+          <li>TV Shows</li>
+          <li>Anime</li>
+          <li>Top Reviews</li>
+          <li>Bookmarks</li>
+        </ul>
+        <div class="search-bar">
+          <input type="text" placeholder="Search...">
+        </div>
+       
+      
+       
+      </div>
+      <div class="hamburger-menu" onclick="toggleDropdown()"> 
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <ul class="dropdown" id="dropdownMenu">
+        <li><a href="#">Watch Now</a></li>
+        <li><a href="#">Movies</a></li>
+        <li><a href="#">TV Shows</a></li>
+        <li><a href="#">Sports</a></li>
+        <li><a href="#">Kids</a></li>
+        <li><a href="#">Library</a></li>
+      </ul>
+      
+      <!-- Carousel control buttons -->
+      <div class="carousel-control prev" id="prevButton">&#10094;</div>
+      <div class="carousel-control next" id="nextButton">&#10095;</div>
+
+      <div class="arrow-down"></div>
+    </div>
+
+    <div class="section-movies">
+      <div class="guide-buttons">New Movies</div>
+      <div class="text-box">Curious if the movie is worth watching? Read reviews, below, today!</div>
+      <div class="movies-grid" id="movie_grid">
+        <!-- Movie 1 -->
+        <a href="#" class="movie">
+          <img src="https://image.tmdb.org//t/p/w220_and_h330_face/gOnmaxHo0412UVr1QM5Nekv1xPi.jpg" alt="Cocaine Bear">
+          <h3>Cocaine Bear</h3>
+        </a>
+        <!-- Movie 2 -->
+        <a href="#" class="movie">
+          <img src="https://image.tmdb.org//t/p/w220_and_h330_face/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg" alt="Avatar: The Way of Water">
+          <h3>Avatar: The Way of Water</h3>
+        </a>
+        <!-- Movie 3 -->
+        <a href="#" class="movie">
+          <img src="https://image.tmdb.org//t/p/w220_and_h330_face/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg" alt="John Wick: Chapter 4">
+          <h3>John Wick: Chapter 4</h3>
+        </a>
+        <!-- Movie 4 -->
+        <a href="#" class="movie">
+          <img src="https://image.tmdb.org//t/p/w220_and_h330_face/kuf6dutpsT0vSVehic3EZIqkOBt.jpg" alt="Puss in Boots: The Last Wish">
+          <h3>Puss in Boots: The Last Wish</h3>
+        </a>
+        <!-- Movie 5 -->
+        <a href="#" class="movie">
+          <img src="https://image.tmdb.org//t/p/w220_and_h330_face/x3PIk93PTbxT88ohfeb26L1VpZw.jpg" alt="Prizefighter: The Life of Jem Belcher">
+          <h3>Prizefighter: The Life of Jem Belcher</h3>
+        </a>
+        <!-- Movie 6 -->
+        <a href="#" class="movie">
+          <img src="https://image.tmdb.org//t/p/w220_and_h330_face/2lUYbD2C3XSuwqMUbDVDQuz9mqz.jpg" alt="The Devil Conspiracy">
+          <h3>The Devil Conspiracy</h3>
+        </a>
+        <!-- Movie 7 -->
+        <a href="#" class="movie">
+          <img src="https://image.tmdb.org//t/p/w220_and_h330_face/dm06L9pxDOL9jNSK4Cb6y139rrG.jpg" alt="Knock at the Cabin">
+          <h3>Knock at the Cabin</h3>
+        </a>
+        <!-- Movie 8 -->
+        <a href="#" class="movie">
+          <img src="https://image.tmdb.org//t/p/w220_and_h330_face/sv1xJUazXeYqALzczSZ3O6nkH75.jpg" alt="Black Panther: Wakanda Forever">
+          <h3>Black Panther: Wakanda Forever</h3>
+        </a>
+        <!-- Movie 9 -->
+        <a href="#" class="movie">
+          <img src="https://image.tmdb.org//t/p/w220_and_h330_face/kUWTY8rwEZ3d8G31GuPMbvqS67D.jpg" alt="Money Shot: The Pornhub Story">
+          <h3>Money Shot: The Pornhub Story</h3>
+        </a>
+        <!-- Movie 10 -->
+        <a href="#" class="movie">
+          <img src="https://image.tmdb.org//t/p/w220_and_h330_face/hrATQE8ScQceohwInaMluluNEaf.jpg" alt="Batman: The Doom That Came to Gotham">
+          <h3>Batman: The Doom That Came to Gotham</h3>
+        </a>
+        <!-- Movie 11 -->
+        <a href="#" class="movie">
+          <img src="https://image.tmdb.org//t/p/w220_and_h330_face/qi9r5xBgcc9KTxlOLjssEbDgO0J.jpg" alt="Plane">
+          <h3>Plane</h3>
+        </a>
+        <!-- Movie 12 -->
+        <a href="#" class="movie">
+          <img src="https://image.tmdb.org//t/p/w220_and_h330_face/txP5HTHAlwLV1ZieGKviCsnWhXS.jpg" alt="Consecration">
+          <h3>Consecration</h3>
+        </a>
+        <!-- Movie 13 -->
+        <a href="#" class="movie">
+          <img src="https://image.tmdb.org//t/p/w220_and_h330_face/aCy61aU7BMG7SfhkaAaasS0KzUO.jpg" alt="Sayen">
+          <h3>Sayen</h3>
+        </a>
+        <!-- Movie 14 -->
+        <a href="#" class="movie">
+          <img src="https://image.tmdb.org//t/p/w220_and_h330_face/hXWBc0ioZP3cN4zCu6SN3YHXZVO.jpg" alt="John Wick: Chapter 2">
+          <h3>John Wick: Chapter 2</h3>
+        </a>
+        <!-- Movie 15 -->
+        <a href="#" class="movie">
+          <img src="https://image.tmdb.org//t/p/w220_and_h330_face/3GrRgt6CiLIUXUtoktcv1g2iwT5.jpg" alt="Shazam! Fury of the Gods">
+          <h3>Shazam! Fury of the Gods</h3>
+        </a>
+        <!-- Movie 16 -->
+        <a href="#" class="movie">
+          <img src="https://image.tmdb.org//t/p/w220_and_h330_face/1EnBjTJ5utgT1OXYBZ8YwByRCzP.jpg" alt="Die Hart">
+          <h3>Die Hart</h3>
+        </a>
+        <!-- Movie 17 -->
+        <a href="#" class="movie">
+          <img src="https://image.tmdb.org//t/p/w220_and_h330_face/v5CfpzxoJDkZxjZAizClFdlEF0U.jpg" alt="Shark Side of the Moon">
+          <h3>Shark Side of the Moon</h3>
+        </a>
+        <!-- Movie 18 -->
+        <a href="#" class="movie">
+          <img src="https://image.tmdb.org//t/p/w220_and_h330_face/vJU3rXSP9hwUuLeq8IpfsJShLOk.jpg" alt="Creed III">
+          <h3>Creed III</h3>
+        </a>
+        <!-- Movie 19 -->
+        <a href="#" class="movie">
+          <img src="https://image.tmdb.org//t/p/w220_and_h330_face/8LpnMIqpRiwxpbGR33ALCmVl7gj.jpg" alt="13 Exorcisms">
+          <h3>13 Exorcisms</h3>
+        </a>
+        <!-- Movie 20 -->
+        <a href="#" class="movie">
+          <img src="https://image.tmdb.org//t/p/w220_and_h330_face/ziEuG1essDuWuC5lpWUaw1uXY2O.jpg" alt="John Wick: Chapter 3 - Parabellum">
+          <h3>John Wick: Chapter 3 - Parabellum</h3>
+        </a>
+      </div>
+      <div class="guide-buttons" id="load-button">Load More</div>
+    </div>
+    
+    
+
+    <!-- Add the footer here -->
+    <footer>
+      <p>2023 Copyright &copy; Muvo All rights reserved. Version 1.0.3</p>
+    </footer>
+  </div>
 </body>
 
 </html>

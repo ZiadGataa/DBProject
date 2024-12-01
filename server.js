@@ -106,7 +106,7 @@ app.delete('/reviews/:id', (req, res) => {
 app.post('/login', (req, res) => {
     const { email, password } = req.body;
 
-    db.query('SELECT * FROM user WHERE Email = ?', [email], async (err, results) => {
+    db.query('SELECT UserID, Password FROM user WHERE Email = ?', [email], async (err, results) => {
         if (err) {
             console.error('Database error:', err);
             return res.status(500).json({ error: 'Database error' });
@@ -115,13 +115,18 @@ app.post('/login', (req, res) => {
         if (results.length > 0) {
             const user = results[0];
 
-            // Compare the entered password with the stored hashed password
-            const isPasswordValid = await bcrypt.compare(password, user.Password);
+            try {
+                // Compare the entered password with the stored hashed password
+                const isPasswordValid = await bcrypt.compare(password, user.Password);
 
-            if (isPasswordValid) {
-                return res.json({ success: true, userId: user.UserID });
-            } else {
-                return res.status(401).json({ success: false, message: 'Invalid password' });
+                if (isPasswordValid) {
+                    return res.json({ success: true, userId: user.UserID });
+                } else {
+                    return res.status(401).json({ success: false, message: 'Invalid password' });
+                }
+            } catch (error) {
+                console.error('Error during password comparison:', error);
+                return res.status(500).json({ error: 'Internal server error' });
             }
         } else {
             return res.status(404).json({ success: false, message: 'User not found' });
@@ -131,6 +136,7 @@ app.post('/login', (req, res) => {
 
 
 const bcrypt = require('bcrypt');
+
 app.post('/register', async (req, res) => {
     const { name, age, email, password, isAdmin, isReviewer } = req.body;
 
@@ -141,6 +147,11 @@ app.post('/register', async (req, res) => {
     try {
         // Check if email already exists
         db.query('SELECT * FROM user WHERE Email = ?', [email], async (err, results) => {
+            if (err) {
+                console.error('Database error:', err);
+                return res.status(500).json({ error: 'Database error' });
+            }
+
             if (results.length > 0) {
                 return res.status(409).json({ error: 'Email already registered.' });
             } else {
@@ -149,8 +160,8 @@ app.post('/register', async (req, res) => {
 
                 // Insert the new user into the database
                 db.query(
-                    'INSERT INTO user (Name, Age, Email, AdminUsers, Reviewers) VALUES (?, ?, ?, ?, ?)',
-                    [name, age, email, isAdmin ? 1 : 0, isReviewer ? 1 : 0],
+                    'INSERT INTO user (Name, Age, Email, Password, AdminUsers, Reviewers) VALUES (?, ?, ?, ?, ?, ?)',
+                    [name, age, email, hashedPassword, isAdmin ? 1 : 0, isReviewer ? 1 : 0],
                     (err, result) => {
                         if (err) {
                             console.error('Database error:', err);

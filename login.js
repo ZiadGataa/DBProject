@@ -34,7 +34,7 @@ document.getElementById('login-form').addEventListener('submit', function (e) {
     fetch('http://localhost:3000/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, age, email, password, isAdmin, isReviewer })
+      body: JSON.stringify({ name, age, email, isAdmin, isReviewer, password})
     })
       .then(response => response.json())
       .then(data => {
